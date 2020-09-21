@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+    <!-- Load Posenet -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <!-- Webcam -->
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+    <!--goị thằng camera vào-->
+    <script type="text/javascript"src="./webcam.js"></script>
+ </head>
+
+  <body>
+    <!--<img id="target" src='' crossorigin='anonymous'/>-->
+    <!--Webcam-->
+    <div id="show-webcam">
+        <video id="webcam" autoplay playsinline width="640" height="480" crossorigin='anonymous'></video>
+    </div>
+    <canvas id="canvas" class="d-none"></canvas>
+    <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
+
+  </body>
+  <!-- Place your code in the script tag below. You can also use an external .js file -->
+  <script>
+    // init webcam
+    const webcamElement = document.getElementById('webcam');
+    const canvasElement = document.getElementById('canvas');
+    const snapSoundElement = document.getElementById('snapSound');
+    const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+    
+    var flipHorizontal = false;
+
+    var imageElement;
+
+    webcam.start()
+    .then(result =>{
+    console.log("webcam started");
+    })
+    .catch(err => {
+        console.log("oh no");
+    });
+  </script>
+  
+</html>

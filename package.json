@@ -1,0 +1,17 @@
+{
+  "name": "dsc-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compute-cosine-similarity": "^1.0.0",
+    "compute-l2norm": "^1.1.0",
+    "esm": "^3.2.25"
+  }
+}
